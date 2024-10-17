@@ -1,0 +1,57 @@
+/* Estilo básico para o corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte da página */
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove preenchimento padrão do navegador */
+}
+
+/* Estilo para o cabeçalho da página */
+header {
+    background-color: #f8f9fa; /* Cor de fundo do cabeçalho */
+    padding: 20px; /* Preenchimento interno do cabeçalho */
+    text-align: center; /* Centraliza o texto no cabeçalho */
+}
+
+/* Estilo para a seção principal */
+main {
+    padding: 20px; /* Preenchimento interno da seção principal */
+}
+
+/* Estilo para a lista de produtos */
+.produtos ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    display: flex; /* Usa flexbox para dispor os produtos lado a lado */
+    justify-content: space-around; /* Espaçamento igual entre os produtos */
+    flex-wrap: wrap; /* Permite que os produtos se movam para a próxima linha se necessário */
+}
+
+/* Estilo para cada item da lista de produtos */
+.produto {
+    position: relative; /* Permite posicionar a descrição em relação ao produto */
+    margin: 10px; /* Margem ao redor dos produtos */
+}
+
+/* Estilo para as imagens dos produtos */
+.produto img {
+    width: 150px; /* Largura fixa para as imagens */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas nas imagens */
+}
+
+/* Estilo para a descrição que aparece ao passar o mouse */
+.descricao {
+    position: absolute; /* Permite posicionar a descrição em relação ao produto */
+    bottom: 10px; /* Distância do fundo do produto */
+    left: 0; /* Alinha à esquerda do produto */
+    right: 0; /* Alinha à direita do produto */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro e semi-transparente */
+    color: white; /* Cor do texto */
+    padding: 5px; /* Preenchimento interno da descrição */
+    display: none; /* Inicialmente oculta a descrição */
+}
+
+/* Exibe a descrição ao passar o mouse sobre o produto */
+.produto:hover .descricao {
+    display: block; /* Mostra a descrição ao passar o mouse */
+}
