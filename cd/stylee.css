@@ -1,57 +1,76 @@
 /* Estilo básico para o corpo da página */
 body {
-    font-family: Arial, sans-serif; /* Define a fonte da página */
-    line-height: 1.6; /* Melhora a legibilidade do texto */
-    margin: 0; /* Remove margens padrão do navegador */
-    padding: 0; /* Remove preenchimento padrão do navegador */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 /* Estilo para o cabeçalho da página */
 header {
-    background-color: #f8f9fa; /* Cor de fundo do cabeçalho */
-    padding: 20px; /* Preenchimento interno do cabeçalho */
-    text-align: center; /* Centraliza o texto no cabeçalho */
+    background-color: #e89510;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra no cabeçalho */
 }
 
 /* Estilo para a seção principal */
 main {
-    padding: 20px; /* Preenchimento interno da seção principal */
+    padding: 20px;
 }
 
 /* Estilo para a lista de produtos */
 .produtos ul {
-    list-style-type: none; /* Remove os marcadores da lista */
-    display: flex; /* Usa flexbox para dispor os produtos lado a lado */
-    justify-content: space-around; /* Espaçamento igual entre os produtos */
-    flex-wrap: wrap; /* Permite que os produtos se movam para a próxima linha se necessário */
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 /* Estilo para cada item da lista de produtos */
 .produto {
-    position: relative; /* Permite posicionar a descrição em relação ao produto */
-    margin: 10px; /* Margem ao redor dos produtos */
+    position: relative;
+    margin: 20px;
+    overflow: hidden; /* Oculta o excesso ao aplicar zoom */
+    transition: transform 0.3s ease; /* Animação de zoom */
+}
+
+/* Efeito de zoom ao passar o mouse */
+.produto:hover {
+    transform: scale(1.05); /* Aumenta o tamanho da imagem */
 }
 
 /* Estilo para as imagens dos produtos */
 .produto img {
-    width: 150px; /* Largura fixa para as imagens */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 8px; /* Bordas arredondadas nas imagens */
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao redor das imagens */
+    transition: box-shadow 0.3s ease; /* Animação da sombra */
 }
 
-/* Estilo para a descrição que aparece ao passar o mouse */
+.produto:hover img {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais intensa ao passar o mouse */
+}
+
+/* Estilo para a descrição dos produtos */
 .descricao {
-    position: absolute; /* Permite posicionar a descrição em relação ao produto */
-    bottom: 10px; /* Distância do fundo do produto */
-    left: 0; /* Alinha à esquerda do produto */
-    right: 0; /* Alinha à direita do produto */
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro e semi-transparente */
-    color: white; /* Cor do texto */
-    padding: 5px; /* Preenchimento interno da descrição */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
     display: none; /* Inicialmente oculta a descrição */
+    opacity: 0; /* Inicia invisível para animação */
+    transition: opacity 0.3s ease; /* Animação de transição */
 }
 
 /* Exibe a descrição ao passar o mouse sobre o produto */
 .produto:hover .descricao {
-    display: block; /* Mostra a descrição ao passar o mouse */
+    display: block;
+    opacity: 1; /* Torna a descrição visível com suavidade */
 }
