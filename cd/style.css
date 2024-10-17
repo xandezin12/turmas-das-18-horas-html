@@ -1,16 +1,60 @@
 /* Define a fonte padrão da página */
 body {
-    font-family: "Oswald";
+    font-family: "Oswald", sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-}
-
-/* Define uma fonte diferente para o cabeçalho */
-header {
-    font-family: "Raleway";
-    background-color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilo do cabeçalho */
+  header {
+    font-family: "Raleway", sans-serif;
+    background-color: #f1830d;
     color: #fff;
     padding: 1rem;
     text-align: center;
-}
+  }
+  
+  /* Imagem de fundo da página */
+  .overlay {
+    /* Faz com que a div cubra toda a tela abaixo do cabeçalho */
+    background-image: url('imagens/sim.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Overlay alaranjado e transparente */
+  .overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 165, 0, 0.5); /* Transparência laranja */
+    z-index: 1;
+  }
+  
+  /* Conteúdo da overlay */
+  .conteudo {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima da overlay */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h2, p {
+    margin: 0;
+    padding: 10px;
+  }
+  
